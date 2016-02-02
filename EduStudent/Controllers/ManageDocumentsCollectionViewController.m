@@ -1,28 +1,25 @@
 //
-//  HomeCollectionViewController.m
+//  ManageDocumentsCollectionViewController.m
 //  EduStudent
 //
-//  Created by Andrew Kochulab on 01.02.16.
+//  Created by Andrew Kochulab on 02.02.16.
 //  Copyright © 2016 Andrew Kochulab. All rights reserved.
 //
 
-#import "HomeCollectionViewController.h"
-#import "HomeCollectionViewCell.h"
+#import "ManageDocumentsCollectionViewController.h"
+#import "ManageDocumentsCollectionViewCell.h"
 
-@interface HomeCollectionViewController ()
+@interface ManageDocumentsCollectionViewController ()
 
 @property (strong, nonatomic) NSArray* categoryNames;
-@property (strong, nonatomic) NSArray* categoryImages;
+@property (strong, nonatomic) NSMutableArray* categoryImages;
 @property (strong, nonatomic) NSArray* categoryBackgrounds;
 
 @end
 
+@implementation ManageDocumentsCollectionViewController
 
-@implementation HomeCollectionViewController
-
-static NSString * const homeCellIdentifier = @"HomeCellIdentifier";
-static NSString * const joinToClassSegueIdentifier = @"JoinToClassSegueIdentifier";
-static NSString * const manageDocumentsSegueIdentifier = @"ManageDocumentsSegueIdentifier";
+static NSString * const manageDocumentsCellIdentifier = @"ManageDocumentsCellIdentifier";
 
 #pragma mark - UIViewController methods
 
@@ -32,18 +29,17 @@ static NSString * const manageDocumentsSegueIdentifier = @"ManageDocumentsSegueI
 }
 
 - (void) setupCategories {
-    self.categoryNames = @[@"Join to class", @"Notes", @"Library", @"Additionally"];
-    self.categoryImages = [NSArray arrayWithObjects:
-                           [UIImage imageNamed: @"create_class"],
-                           [UIImage imageNamed: @"notes"],
-                           [UIImage imageNamed: @"library"],
-                           [UIImage imageNamed: @"additional"],
-                           nil];
+    self.categoryNames = @[@"Files", @"Notes", @"Sessions", @"Assessments", @"Homeworks"];
+    self.categoryImages = [NSMutableArray array];
+    for (NSString* categoryName in self.categoryNames) {
+        [self.categoryImages addObject: [UIImage imageNamed: [categoryName lowercaseString]]];
+    }
     self.categoryBackgrounds = [NSArray arrayWithObjects:
-                                [UIColor colorWithRed: 1.f green: .858f blue: .251f alpha: 1.f],
-                                [UIColor colorWithRed: .380f green: .941f blue: .380f alpha: 1.f],
-                                [UIColor colorWithRed: .368f green: .937f blue: 1.f alpha: 1.f],
-                                [UIColor colorWithRed: 1.f green: .482f blue: .478f alpha: 1.f],
+                                [UIColor colorWithRed: .992f green: .682f blue: .157f alpha: 1.f],
+                                [UIColor colorWithRed: .537f green: .773f blue: .035f alpha: 1.f],
+                                [UIColor colorWithRed: .173f green: .647f blue: .871f alpha: 1.f],
+                                [UIColor colorWithRed: .984f green: .165f blue: .208f alpha: 1.f],
+                                [UIColor colorWithRed: .176f green: .647f blue: .871f alpha: 1.f],
                                 nil];
 }
 
@@ -62,25 +58,20 @@ static NSString * const manageDocumentsSegueIdentifier = @"ManageDocumentsSegueI
 }
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    HomeCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier: homeCellIdentifier forIndexPath: indexPath];
+    ManageDocumentsCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier: manageDocumentsCellIdentifier forIndexPath: indexPath];
     cell.categoryTitle.text = [self.categoryNames objectAtIndex: indexPath.row];
     cell.categoryImageView.image = [self.categoryImages objectAtIndex: indexPath.row];
     cell.backgroundColor = [self.categoryBackgrounds objectAtIndex: indexPath.row];
     cell.categoryImageView.contentScaleFactor = 1.4f;
-    cell.tag = indexPath.row;
     
     return cell;
 }
 
-#pragma mark - UICollectionViewDelegate methods 
+#pragma mark - UICollectionViewDelegate methods
 
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.row == 0) {
-        [self performSegueWithIdentifier: joinToClassSegueIdentifier sender: indexPath];
-    } else {
-        [self performSegueWithIdentifier: manageDocumentsSegueIdentifier sender: indexPath];
-    }
+    //NSArray* segueIdentifiers = @[@"FilesSegueIdentifier", @"NotesSegueIdentifier", @"SessionsSegueIdentifier", @"AssessmentsSegueIdentifier", @"HomerworksSegueIdentifier"];
+    //[self performSegueWithIdentifier: [segueIdentifiers objectAtIndex: indexPath.row]  sender: indexPath];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout methods
@@ -88,6 +79,10 @@ static NSString * const manageDocumentsSegueIdentifier = @"ManageDocumentsSegueI
 - (CGSize) collectionView:(UICollectionView *)collectionView layout:(nonnull UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CGFloat width = CGRectGetWidth(collectionView.frame) / 2;
     CGFloat height = CGRectGetHeight(collectionView.frame) / 2;
+    
+    if (indexPath.row >= 2) {
+        width = (indexPath.row % 2 == 0) ? (CGRectGetWidth(collectionView.frame) / 4) : (CGRectGetWidth(collectionView.frame) / 2);
+    }
     
     return CGSizeMake(width, height);
 }

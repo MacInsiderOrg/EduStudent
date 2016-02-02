@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C80DC7041C6120C40067EDDC /* ManageDocumentsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C80DC7031C6120C40067EDDC /* ManageDocumentsCollectionViewController.m */; };
+		C80DC7071C6120F70067EDDC /* ManageDocumentsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C80DC7061C6120F70067EDDC /* ManageDocumentsCollectionViewCell.m */; };
 		C892246E1C5E872C004CBD8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C892246D1C5E872C004CBD8F /* main.m */; };
 		C89224711C5E872C004CBD8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C89224701C5E872C004CBD8F /* AppDelegate.m */; };
 		C89224771C5E872C004CBD8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C89224751C5E872C004CBD8F /* Main.storyboard */; };
@@ -18,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C80DC7021C6120C40067EDDC /* ManageDocumentsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ManageDocumentsCollectionViewController.h; path = Controllers/ManageDocumentsCollectionViewController.h; sourceTree = "<group>"; };
+		C80DC7031C6120C40067EDDC /* ManageDocumentsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ManageDocumentsCollectionViewController.m; path = Controllers/ManageDocumentsCollectionViewController.m; sourceTree = "<group>"; };
+		C80DC7051C6120F70067EDDC /* ManageDocumentsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ManageDocumentsCollectionViewCell.h; path = Views/ManageDocumentsCollectionViewCell.h; sourceTree = "<group>"; };
+		C80DC7061C6120F70067EDDC /* ManageDocumentsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ManageDocumentsCollectionViewCell.m; path = Views/ManageDocumentsCollectionViewCell.m; sourceTree = "<group>"; };
 		C89224691C5E872C004CBD8F /* EduStudent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EduStudent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C892246D1C5E872C004CBD8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C892246F1C5E872C004CBD8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -98,6 +104,8 @@
 			children = (
 				C8EC3A451C5FD13A001C0C09 /* HomeCollectionViewCell.h */,
 				C8EC3A461C5FD13A001C0C09 /* HomeCollectionViewCell.m */,
+				C80DC7051C6120F70067EDDC /* ManageDocumentsCollectionViewCell.h */,
+				C80DC7061C6120F70067EDDC /* ManageDocumentsCollectionViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -109,6 +117,8 @@
 				C8EC3A341C5FCFBA001C0C09 /* HomeCollectionViewController.m */,
 				C8EC3A361C5FCFF5001C0C09 /* JoinToClassViewController.h */,
 				C8EC3A371C5FCFF5001C0C09 /* JoinToClassViewController.m */,
+				C80DC7021C6120C40067EDDC /* ManageDocumentsCollectionViewController.h */,
+				C80DC7031C6120C40067EDDC /* ManageDocumentsCollectionViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -183,11 +193,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C80DC7041C6120C40067EDDC /* ManageDocumentsCollectionViewController.m in Sources */,
 				C89224711C5E872C004CBD8F /* AppDelegate.m in Sources */,
 				C892246E1C5E872C004CBD8F /* main.m in Sources */,
 				C8EC3A351C5FCFBA001C0C09 /* HomeCollectionViewController.m in Sources */,
 				C8EC3A381C5FCFF5001C0C09 /* JoinToClassViewController.m in Sources */,
 				C8EC3A471C5FD13A001C0C09 /* HomeCollectionViewCell.m in Sources */,
+				C80DC7071C6120F70067EDDC /* ManageDocumentsCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

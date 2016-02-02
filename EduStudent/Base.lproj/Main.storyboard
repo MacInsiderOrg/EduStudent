@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -50,7 +51,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="center" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8xB-hM-aoW">
-                                            <rect key="frame" x="24" y="24" width="192" height="129"/>
+                                            <rect key="frame" x="72" y="24" width="96" height="129"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -60,9 +61,8 @@
                                     <constraint firstItem="8xB-hM-aoW" firstAttribute="top" secondItem="T23-cx-EDj" secondAttribute="topMargin" constant="16" id="D5A-uM-OGC"/>
                                     <constraint firstItem="N5R-14-d6v" firstAttribute="centerX" secondItem="T23-cx-EDj" secondAttribute="centerX" id="IQb-cK-zor"/>
                                     <constraint firstItem="N5R-14-d6v" firstAttribute="top" secondItem="8xB-hM-aoW" secondAttribute="bottom" constant="16" id="Q9i-Kl-XaF"/>
+                                    <constraint firstItem="8xB-hM-aoW" firstAttribute="width" secondItem="T23-cx-EDj" secondAttribute="width" multiplier="0.4" id="Si3-yY-K2t"/>
                                     <constraint firstItem="8xB-hM-aoW" firstAttribute="centerX" secondItem="T23-cx-EDj" secondAttribute="centerX" id="lh7-4k-0Cl"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="8xB-hM-aoW" secondAttribute="trailing" constant="16" id="nYO-KL-f9P"/>
-                                    <constraint firstItem="8xB-hM-aoW" firstAttribute="leading" secondItem="T23-cx-EDj" secondAttribute="leadingMargin" constant="16" id="u6L-lP-Xfr"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="categoryImageView" destination="8xB-hM-aoW" id="cUE-vA-0Ps"/>
@@ -79,11 +79,71 @@
                     <navigationItem key="navigationItem" title="Home" id="H7y-yc-luP"/>
                     <connections>
                         <segue destination="tmF-s7-gsl" kind="show" identifier="JoinToClassSegueIdentifier" id="tH9-lu-Nge"/>
+                        <segue destination="TXh-y2-oxc" kind="show" identifier="ManageDocumentsSegueIdentifier" id="awc-Hs-NU8"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IwG-dW-rBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="120" y="250"/>
+        </scene>
+        <!--Manage Documents-->
+        <scene sceneID="jNv-hw-4d3">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="TXh-y2-oxc" customClass="ManageDocumentsCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="68g-ko-1LX">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="em5-rC-RNM">
+                            <size key="itemSize" width="240" height="240"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ManageDocumentsCellIdentifier" id="cZy-62-5pA" customClass="ManageDocumentsCollectionViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkx-ZV-gWp">
+                                            <rect key="frame" x="76" y="166" width="88" height="50"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="36"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zQf-fv-3PU">
+                                            <rect key="frame" x="72" y="24" width="96" height="126"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="hkx-ZV-gWp" secondAttribute="bottom" constant="16" id="H97-NC-4ED"/>
+                                    <constraint firstItem="hkx-ZV-gWp" firstAttribute="top" secondItem="zQf-fv-3PU" secondAttribute="bottom" constant="16" id="cZL-fB-xjb"/>
+                                    <constraint firstItem="zQf-fv-3PU" firstAttribute="top" secondItem="cZy-62-5pA" secondAttribute="topMargin" constant="16" id="ei7-Ou-cUA"/>
+                                    <constraint firstItem="zQf-fv-3PU" firstAttribute="centerX" secondItem="cZy-62-5pA" secondAttribute="centerX" id="pZ3-YX-zO5"/>
+                                    <constraint firstItem="zQf-fv-3PU" firstAttribute="width" secondItem="cZy-62-5pA" secondAttribute="width" multiplier="0.4" id="sUf-MJ-zui"/>
+                                    <constraint firstItem="hkx-ZV-gWp" firstAttribute="centerX" secondItem="cZy-62-5pA" secondAttribute="centerX" id="zgG-JP-Ptl"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="categoryImageView" destination="zQf-fv-3PU" id="3mx-UW-Jl0"/>
+                                    <outlet property="categoryTitle" destination="hkx-ZV-gWp" id="hFs-vb-paf"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="TXh-y2-oxc" id="T9t-VX-MxB"/>
+                            <outlet property="delegate" destination="TXh-y2-oxc" id="VoC-q1-1RA"/>
+                        </connections>
+                    </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Manage Documents" id="A9z-Dj-9Uz"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w50-ST-gQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="814" y="541"/>
         </scene>
         <!--Join to class-->
         <scene sceneID="rYR-wP-IZ6">
