@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dOa-y6-LpY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dOa-y6-LpY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -148,7 +148,7 @@
         <!--Join to class-->
         <scene sceneID="rYR-wP-IZ6">
             <objects>
-                <viewController id="tmF-s7-gsl" customClass="CreateClassViewController" sceneMemberID="viewController">
+                <viewController id="tmF-s7-gsl" customClass="JoinToClassViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cgv-is-Xfp"/>
                         <viewControllerLayoutGuide type="bottom" id="1dk-Sf-zAt"/>
@@ -156,13 +156,64 @@
                     <view key="view" contentMode="scaleToFill" id="DvX-GN-40z">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mX7-dN-dse">
+                                <rect key="frame" x="187" y="134" width="226" height="103"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Enter the code to connect">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="22" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="2" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Vrm-GB-O7D">
+                                <rect key="frame" x="210" y="283" width="180" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="2kU-QR-CA6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="join"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJt-W8-suA">
+                                <rect key="frame" x="210" y="331" width="180" height="35"/>
+                                <color key="backgroundColor" red="0.40581311679999998" green="0.73455489309999999" blue="0.046052631580000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Connect">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="connectAction:" destination="tmF-s7-gsl" eventType="touchUpInside" id="KWd-mj-xKE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.58144646570000003" green="0.5" blue="0.71988704960000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Vrm-GB-O7D" firstAttribute="centerY" secondItem="DvX-GN-40z" secondAttribute="centerY" id="7Ah-zh-OfD"/>
+                            <constraint firstItem="yJt-W8-suA" firstAttribute="top" secondItem="Vrm-GB-O7D" secondAttribute="bottom" constant="13" id="At2-QO-K0E"/>
+                            <constraint firstItem="Vrm-GB-O7D" firstAttribute="top" secondItem="mX7-dN-dse" secondAttribute="bottom" constant="46" id="IMr-Za-axI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mX7-dN-dse" secondAttribute="trailing" constant="167" id="IO1-FR-EPN"/>
+                            <constraint firstItem="yJt-W8-suA" firstAttribute="height" secondItem="Vrm-GB-O7D" secondAttribute="height" id="Lzq-FT-wgf"/>
+                            <constraint firstItem="mX7-dN-dse" firstAttribute="leading" secondItem="DvX-GN-40z" secondAttribute="leadingMargin" constant="167" id="No0-o1-p0S"/>
+                            <constraint firstItem="Vrm-GB-O7D" firstAttribute="width" secondItem="DvX-GN-40z" secondAttribute="width" multiplier="0.3" id="TgX-7I-bp1"/>
+                            <constraint firstItem="Vrm-GB-O7D" firstAttribute="centerX" secondItem="DvX-GN-40z" secondAttribute="centerX" id="ZUq-La-woH"/>
+                            <constraint firstItem="yJt-W8-suA" firstAttribute="centerX" secondItem="DvX-GN-40z" secondAttribute="centerX" id="aBJ-WU-rCx"/>
+                            <constraint firstItem="mX7-dN-dse" firstAttribute="centerX" secondItem="DvX-GN-40z" secondAttribute="centerX" id="k6T-4s-noA"/>
+                            <constraint firstItem="yJt-W8-suA" firstAttribute="width" secondItem="Vrm-GB-O7D" secondAttribute="width" id="nqD-s3-F4w"/>
+                            <constraint firstItem="mX7-dN-dse" firstAttribute="top" secondItem="Cgv-is-Xfp" secondAttribute="bottom" constant="70" id="qpo-8c-OQU"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Join to class" id="Dox-6H-lh6"/>
+                    <connections>
+                        <outlet property="codeTextField" destination="Vrm-GB-O7D" id="SSf-96-EYQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="af6-bH-BBB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814" y="-164"/>
+            <point key="canvasLocation" x="871" y="-163"/>
         </scene>
     </scenes>
 </document>
